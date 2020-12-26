@@ -1,0 +1,13 @@
+{
+  "name": "ST-Trial-Docker-Image",
+  "version": "1.0.0",
+  "description": "Discord bot for docker",
+  "author": "mk3ext <admin@mk3ext.dev>",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "latest"
+  }
+}
