@@ -1,0 +1,27 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1"
+    },
+    "exported_at": "2020-12-26T07:38:18-05:00",
+    "name": "Discord Bot",
+    "author": "me@mk3ext.dev",
+    "description": "Discord bot",
+    "features": null,
+    "image": "quay.io\/mk3ext\/st-trial:latest",
+    "startup": "if [[ -d .git ]] && [[ {{AUTO_UPDATE}} == \"1\" ]]; then git pull; fi; if [[ ! -z ${NODE_PACKAGES} ]]; then \/usr\/local\/bin\/npm install ${NODE_PACKAGES}; fi; if [ -f \/home\/container\/package.json ]; then  \/usr\/local\/bin\/npm install --production; fi; \/usr\/local\/bin\/node \/home\/container\/index.js",
+    "config": {
+        "files": "{}",
+        "startup": "{}",
+        "logs": "{}",
+        "stop": "^c"
+    },
+    "scripts": {
+        "installation": {
+            "script": "apk add --no-cache openssl git\r\ncd \/mnt\/server\r\nif [[ -d .git\/ ]]; then\r\n    git pull\r\nelse\r\n    git clone https:\/\/github.com\/wert\/st-trial.git .  \r\n    fi\r\n    \r\nnpm install --production\r\nnode index.js\r\n\r\nrm Dockerfile\r\nrm egg-discord-bot.json",
+            "container": "node:12-alpine",
+            "entrypoint": "ash"
+        }
+    },
+    "variables": []
+}
